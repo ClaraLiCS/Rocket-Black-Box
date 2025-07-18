@@ -108,9 +108,9 @@ public class FXMLDocumentController {
         btnLoadFile.setOnAction(e -> loadFromFile());
     }
 
+    // No conseguí que funcionara la conexión Bluetooth, así que este método no se usa
+    // La placa tampoco guarda datos en su RAM finalmente
     private void connectBluetooth() {
-        // Aquí va tu lógica de conexión Bluetooth (p. ej. usando BlueCove, etc.)
-        //lblStatus.setText("Conexión Bluetooth no implementada aún.");
         
         try {
             // 1. Ejecutar el script de Python
@@ -129,13 +129,13 @@ public class FXMLDocumentController {
 
             // Esperar a que termine
             int exitCode = process.waitFor();
-            System.out.println("✅ Script finalizado con código: " + exitCode);
+            System.out.println("Script finalizado con código: " + exitCode);
 
             // 2. Leer el archivo CSV generado
             String csvFilePath = "esp32_ble_data.csv"; // o "rocket_log.csv"
             Path path = Paths.get(csvFilePath);
             if (!Files.exists(path)) {
-                System.out.println("❌ Archivo CSV no encontrado: " + csvFilePath);
+                System.out.println("Archivo CSV no encontrado: " + csvFilePath);
                 return;
             }
 
@@ -152,7 +152,7 @@ public class FXMLDocumentController {
     public void loadFromFile() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Selecciona un archivo de texto");
-        fileChooser.setInitialDirectory(new File("D:/"));
+        fileChooser.setInitialDirectory(new File("D:/")); //Change this directory as needed
 
         // Obtener el Stage actual desde cualquier nodo (por ejemplo desde un botón o TextArea)
         Stage stage = (Stage) btnLoadFile.getScene().getWindow();
