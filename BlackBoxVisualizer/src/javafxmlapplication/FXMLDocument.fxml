@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
+   <children>
+      <HBox spacing="10" style="-fx-padding: 10;">
+         <children>
+            <Button fx:id="btnLoadFile" text="Open file" HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblStatus" maxWidth="Infinity" text="Estado: Esperando..." HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
+         <children>
+            <Button fx:id="simulator" mnemonicParsing="false" onAction="#launchSimulation" text="Launch Simulation">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <ComboBox fx:id="selectChart" promptText="Select Chart">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></ComboBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <VBox fx:id="chartContainer" spacing="15" style="-fx-padding: 10;" VBox.vgrow="ALWAYS">
+         <children>
+            <LineChart fx:id="tempChart" maxHeight="Infinity" prefHeight="150" title="Temperature" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis label="Time (ms)" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="°C" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="accChart" maxHeight="Infinity" prefHeight="150" title="Acceleration" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis label="Time (ms)" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="m/s²" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="presChart" maxHeight="Infinity" prefHeight="150" title="Pressure" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis label="Time (ms)" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="hPa" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="velChart" maxHeight="Infinity" prefHeight="150" title="Velocity" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis label="Time (ms)" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="m/s" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="heightChart" maxHeight="Infinity" prefHeight="150" title="Height" VBox.vgrow="ALWAYS">
+               <xAxis>
+                  <NumberAxis label="Time (ms)" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis label="m" />
+               </yAxis>
+            </LineChart>
+         </children>
+      </VBox>
+   </children>
+</VBox>
