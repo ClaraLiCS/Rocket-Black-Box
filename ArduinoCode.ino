@@ -156,10 +156,8 @@ void setup() {
   // Initialize QMI8658C
   initQMI();
   Serial.println("Setup finished");
-  //Initialize SD card
-  //initSD();
   //Initialize Bloetooth
-  initBLE();
+  //initBLE();
   // Wait for 1000ms
   delay(30000);
   recordData = true;
@@ -185,10 +183,12 @@ void loop() {
     qmi.getGyroscope(gyroX, gyroY, gyroZ);
     tft.printf("Acc X: %.2f\nAcc Y: %.2f\nAcc Z: %.2f\n", accX, accY, accZ);
     tft.printf("Gyro X: %.2f\nGyro Y: %.2f\nGyro Z: %.2f", gyroX, gyroY, gyroZ);
-    //String d = pres + " " + temp + " " + accX + " " + accY + " " + accZ + " " + gyroX + " " + gyroY + " " + gyroZ;
+    
     String dataLine = String(millis()) + " " + String(pres, 2) + " " + String(temp, 2) + " " +
                       String(accX, 2) + " " + String(accY, 2) + " " + String(accZ, 2) + " " +
                       String(gyroX, 2) + " " + String(gyroY, 2) + " " + String(gyroZ, 2);
+    
+    //Guardar en memoria
     //data.push_back(dataLine);
     Serial.println(dataLine);
     // Guardar en archivo
