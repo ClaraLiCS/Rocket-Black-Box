@@ -114,8 +114,8 @@ public class FXMLDocumentController {
         
         try {
             // 1. Ejecutar el script de Python
-            System.out.println("▶ Ejecutando script Python...");
-            File script = new File("C:\\Users\\clara\\OneDrive - UPV\\Escritorio\\BIP Germany\\BIP_App\\src\\javafxmlapplication\\esp32_ble_receiver.py");
+            //System.out.println("Ejecutando script Python...");
+            File script = new File("C:\\Users\\clara\\OneDrive - UPV\\Escritorio\\BIP Germany\\BIP_App\\src\\javafxmlapplication\\esp32_ble_receiver.py"); //Change as needed
             ProcessBuilder pb = new ProcessBuilder("python", script.getAbsolutePath());
             pb.redirectErrorStream(true);
             Process process = pb.start();
@@ -259,8 +259,8 @@ public class FXMLDocumentController {
             presXAxis.setUpperBound(endT+1);
             presXAxis.setTickUnit((endT-iniT)/i + 1);
             presYAxis.setAutoRanging(false);
-            presYAxis.setLowerBound(minP-2);     // temperatura mínima
-            presYAxis.setUpperBound(maxP+2);     // temperatura máxima
+            presYAxis.setLowerBound(minP-2);     
+            presYAxis.setUpperBound(maxP+2);     
             presYAxis.setTickUnit((maxP-minP)/i + 1);        // intervalo
             
             accXAxis.setAutoRanging(false);
@@ -268,8 +268,8 @@ public class FXMLDocumentController {
             accXAxis.setUpperBound(endT);
             accXAxis.setTickUnit((endT-iniT)/i + 1);
             accYAxis.setAutoRanging(false);
-            accYAxis.setLowerBound(minA-2);     // temperatura mínima
-            accYAxis.setUpperBound(maxA+2);     // temperatura máxima
+            accYAxis.setLowerBound(minA-2);     
+            accYAxis.setUpperBound(maxA+2);     
             accYAxis.setTickUnit((maxA-minA)/i + 1);        // intervalo
             
             velXAxis.setAutoRanging(false);
@@ -277,8 +277,8 @@ public class FXMLDocumentController {
             velXAxis.setUpperBound(endT);
             velXAxis.setTickUnit((endT-iniT)/i + 1);
             velYAxis.setAutoRanging(false);
-            velYAxis.setLowerBound(minA-2);     // temperatura mínima
-            velYAxis.setUpperBound(maxA+2);     // temperatura máxima
+            velYAxis.setLowerBound(minA-2);     
+            velYAxis.setUpperBound(maxA+2);     
             velYAxis.setTickUnit((maxA-minA)/i + 1);        // intervalo
             
             heightXAxis.setAutoRanging(false);
@@ -286,8 +286,8 @@ public class FXMLDocumentController {
             heightXAxis.setUpperBound(endT);
             heightXAxis.setTickUnit((endT-iniT)/i + 1);
             heightYAxis.setAutoRanging(false);
-            heightYAxis.setLowerBound(minH-2);     // temperatura mínima
-            heightYAxis.setUpperBound(maxH+2);     // temperatura máxima
+            heightYAxis.setLowerBound(minH-2);     
+            heightYAxis.setUpperBound(maxH+2);     
             heightYAxis.setTickUnit((maxH-minH)/i + 1);        // intervalo
 
 
@@ -301,7 +301,7 @@ public class FXMLDocumentController {
     @FXML
     private void launchSimulation(ActionEvent event) {
         try {
-            File script = new File("C:\\Users\\clara\\OneDrive - UPV\\Escritorio\\BIP Germany\\BIP_App\\src\\javafxmlapplication\\simulate_rocket.py");
+            File script = new File("C:\\Users\\clara\\OneDrive - UPV\\Escritorio\\BIP Germany\\BIP_App\\src\\javafxmlapplication\\simulate_rocket.py"); //Change this path as needed
             ProcessBuilder pb = new ProcessBuilder("python", script.getAbsolutePath());
             //pb.redirectErrorStream(true);
             Process process = pb.start();
