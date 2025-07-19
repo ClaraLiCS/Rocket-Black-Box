@@ -33,7 +33,7 @@ def main():
 
     fig, ax = plt.subplots()
     line, = ax.plot([], [], lw=2, color='blue')
-    rocket, = ax.plot([], [], marker='^', markersize=15, color='red')  # Dibujito de cohete
+    rocket, = ax.plot([], [], marker='^', markersize=15, color='red') 
     ax.set_xlim(tiempos[0], tiempos[-1])
     ax.set_ylim(min(alturas_suave) - 5, max(alturas_suave) + 5)
     ax.set_xlabel('Tiempo (s)')
